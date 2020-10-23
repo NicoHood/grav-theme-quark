@@ -1,6 +1,7 @@
 {% set body_classes = body_class(['header-fixed', 'header-animated', 'header-dark', 'header-transparent', 'sticky-footer']) %}
 {% set grid_size = theme_var('grid-size') %}
 {% set compress = theme_var('production-mode') ? '.min.css' : '.css' %}
+{% set show_breadcrumbs = theme_var('show_breadcrumbs', show_breadcrumbs|defined(false)) %}
 {% use 'blocks/base.html.twig' %}
 <!DOCTYPE html>
 <html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
@@ -80,6 +81,13 @@
                     {% block messages %}
                         {% include 'partials/messages.html.twig' ignore missing %}
                     {% endblock %}
+
+                    {% block breadcrumbs %}
+                        {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+                            {% include 'partials/breadcrumbs.html.twig' %}
+                        {% endif %}
+                    {% endblock %}
+
                     {{ block('content_surround') }}
                 </section>
             </section>

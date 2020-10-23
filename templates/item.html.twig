@@ -1,8 +1,9 @@
 {% extends 'partials/base.html.twig' %}
+{# Setting the blog variable is required for the taxonomy and sidebar partials to render links correctly. #}
 {% set blog = page.find(header_var('blog_url')|defined(theme_var('blog-page'))) %}
-{% set show_breadcrumbs = header_var('show_breadcrumbs', [page, blog])|defined(true) %}
-{% set show_sidebar = header_var('show_sidebar', [page, blog])|defined(true)  %}
-{% set show_pagination = header_var('show_pagination', [page, blog])|defined(true) %}
+{% set show_breadcrumbs = theme_var('show_breadcrumbs')|defined(theme_var('show_breadcrumbs', true, blog)) %}
+{% set show_sidebar = theme_var('show_sidebar')|defined(theme_var('show_sidebar', true, blog)) %}
+{% set show_pagination = theme_var('show_pagination')|defined(theme_var('show_pagination', true, blog)) %}
 {% set hero_image_name = page.header.hero_image %}
 
 {% block hero %}
@@ -19,23 +20,33 @@
     {% endif %}
 {% endblock %}
 
+{# We must override the body here in order to inject the additional class blog-listing #}
 {% block body %}
 <section id="body-wrapper" class="section blog-listing">
     <section class="container {{ grid_size }}">
+        {% block messages %}
+            {% include 'partials/messages.html.twig' ignore missing %}
+        {% endblock %}
 
-        {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-            {% include 'partials/breadcrumbs.html.twig' %}
-        {% endif %}
+        {% block breadcrumbs %}
+            {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
+                {% include 'partials/breadcrumbs.html.twig' %}
+            {% endif %}
+        {% endblock %}
 
-        {% embed 'partials/layout.html.twig' %}
-            {% block item %}
-                {% include 'partials/blog-item.html.twig' %}
-            {% endblock %}
-            {% block sidebar %}
-                {% include 'partials/sidebar.html.twig' %}
-            {% endblock %}
-        {% endembed %}
+        {{ block('content_surround') }}
 
     </section>
 </section>
+{% endblock %}
+
+{% block content %}
+    {% embed 'partials/layout.html.twig' %}
+        {% block item %}
+            {% include 'partials/blog-item.html.twig' %}
+        {% endblock %}
+        {% block sidebar %}
+            {% include 'partials/sidebar.html.twig' %}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
