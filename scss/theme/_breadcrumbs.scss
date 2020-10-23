@@ -6,23 +6,13 @@
   margin-top: -1rem;
   margin-bottom: 1rem;
 
-
   i {
-    display: none;
-  }
-
-  span, a {
-    padding: 0 0.5rem;
-    &:first-child {
-      padding-left: 0;
-    }
-  }
-
-  span, a {
     &:not(:first-child)::before {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+
       color: #e7e9ed;
       content: "/";
-      padding-right: 1rem;
     }
   }
 }
