@@ -13,14 +13,13 @@
                    value="{{ key|e }}"
                    id="{{ id|e }}"
                    name="{{ (scope ~ field.name)|fieldName }}"
-                   {% if field.classes is defined %}class="{{ field.classes }}" {% endif %}
+                   class="{{ form_field_radio_classes }} {{ field.classes }}"
                    {% if key == value %}checked="checked" {% endif %}
                    {% if field.disabled or isDisabledToggleable %}disabled="disabled"{% endif %}
                    {% if required %}required="required"{% endif %}
+                   {% if field.tabindex %}tabindex="{{ field.tabindex }}"{% endif %}
             />
-            <i class="form-icon"></i>
-            {% if grav.twig.twig.filters['tu'] is defined %}{{ text|tu|raw }}{% else %}{{ text|t|raw }}{% endif %}
-            </label>
+            <i class="form-icon"></i>{{ text|t|raw }}</label>
         </div>
     {% endfor %}
 {% endblock %}
