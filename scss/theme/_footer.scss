@@ -24,8 +24,8 @@ body.sticky-footer {
     ul {
       &.footer-list {
         > li {
-          margin: 0;
           display: inline-block;
+          margin: 0 0.1rem;
         }
       }
     }
