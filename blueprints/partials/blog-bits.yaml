@@ -21,7 +21,7 @@ form:
       type: spacer
       title: Configuration
 
-    header.blog_url:
+    header.blog-page:
       type: text
       toggleable: true
       label: Blog Route
