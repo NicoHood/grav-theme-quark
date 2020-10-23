@@ -61,7 +61,7 @@ header-dark: false            # Inverts the text/logo to work better on dark bac
 header-transparent: false     # Allows the fixed header to be transparent over the page
 sticky-footer: true           # Causes the footer to be sticky at the bottom of the page
 blog-page: '/blog'            # The route to the blog listing page, useful for a blog style layout with sidebar
-show_breadcrumbs: false       # Enable breadcrumbs for all pages by default. Can be disabled on a per-page basis
+show_breadcrumbs:             # En/Disable breadcrumbs for all pages by default. Can be disabled on a per-page basis
 custom_logo:                  # A custom logo rather than the default (see below)  
 custom_logo_mobile:           # A custom logo to use for mobile navigation
 ```

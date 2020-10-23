@@ -7,7 +7,7 @@ header-dark: false
 header-transparent: false
 sticky-footer: true
 blog-page: '/blog'
-show_breadcrumbs: false
+show_breadcrumbs:
 spectre:
   exp: false
   icons: false
