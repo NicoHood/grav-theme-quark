@@ -23,6 +23,9 @@ $header-color-dark: #222;
 $header-text-light: $light-color;
 $header-text-dark: darken($dark-color, 15%);
 
+// Footer
+$footer-color: $bg-color;
+
 // Dropdown Menu
 $dropmenu-bg: $light-color;
 $dropmenu-hover-text: $primary-color;
