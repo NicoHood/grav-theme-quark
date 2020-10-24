@@ -1,9 +1,9 @@
 {% extends 'partials/base.html.twig' %}
 {# Setting the blog variable is required for the taxonomy and sidebar partials to render links correctly. #}
 {% set blog = page.find(theme_var('blog_url')|defined(theme_var('blog-page'))) %}
-{% set show_breadcrumbs = theme_var('show_breadcrumbs')|defined(theme_var('show_breadcrumbs', true, blog)) %}
-{% set show_sidebar = theme_var('show_sidebar')|defined(theme_var('show_sidebar', true, blog)) %}
-{% set show_pagination = theme_var('show_pagination')|defined(theme_var('show_pagination', true, blog)) %}
+{% set show_breadcrumbs = theme_var('show_breadcrumbs'), true) %}
+{% set show_sidebar = theme_var('show_sidebar'), true) %}
+{% set show_pagination = theme_var('show_pagination'), true) %}
 {% set hero_image_name = page.header.hero_image %}
 
 {% block hero %}
