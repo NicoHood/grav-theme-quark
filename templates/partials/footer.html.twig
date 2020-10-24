@@ -6,8 +6,10 @@
         {{ footer_content|raw }}
       {% else %}
 
-        {# Try to load pages with the 'footer' frontmatter attribute set to true #}
-        {% set footer_pages = pages.collection({'items': '@self.descendants'})|filter(x => x.header.footer == true) %}
+        {# Try to load pages with the 'footer' frontmatter attribute set to true
+           NOTE: pages.all does not work here, as pages is only the root page and not a page object:
+           https://github.com/getgrav/grav/issues/3049 #}
+        {% set footer_pages = page.collection({'items': '@root.descendants'})|filter(x => x.header.footer == true) %}
         {% if footer_pages|length %}
           <ul class="footer-list">
             {% for p in footer_pages %}
