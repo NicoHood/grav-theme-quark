@@ -1,0 +1,29 @@
+// FontAwesome 4 compatibility
+
+.#{$la-css-prefix} {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
+@font-face {
+  font-family: $la-font-name;
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url('#{$la-font-path}/la-solid-900.eot');
+  src: url("#{$la-font-path}/la-solid-900.eot?#iefix") format("embedded-opentype"),
+  url("#{$la-font-path}/la-solid-900.woff2") format("woff2"),
+  url("#{$la-font-path}/la-solid-900.woff") format("woff"),
+  url("#{$la-font-path}/la-solid-900.ttf") format("truetype"),
+  url("#{$la-font-path}/la-solid-900.svg#lineawesome") format("svg");
+}
+
+.#{$la-css-prefix} {
+  font-family: $la-font-name-las;
+  font-weight: 900;
+}
