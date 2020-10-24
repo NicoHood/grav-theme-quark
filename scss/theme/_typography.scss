@@ -98,10 +98,8 @@ pre {
 }
 
 // Icon Tweaks
-i.fa {
-
-
-  &.fa-heart, &.fa-heart-o {
+i.far, i.fas {
+  &.fa-heart {
     &.pulse {
       color: #920
     }
@@ -177,5 +175,3 @@ ol {
     margin: 1rem 0;
   }
 }
-
-

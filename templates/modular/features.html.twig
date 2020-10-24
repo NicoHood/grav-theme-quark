@@ -11,7 +11,8 @@
                    <div class="column {{ columns }}">
                       {% if feature.url %}<a href="{{feature.url}}">{% endif %}
                       <div class="feature-icon">
-                         <i class="fa fa-fw {{ feature.icon }}"></i>
+                         {# NOTE: This may still use font-awesome v4, because the admin panel iconpicker does not support font-awesome v5 #}
+                         <i class="fa-fw {{ feature.icon }}"></i>
                          {% if feature.header %}
                             <h6>{{ feature.header }}</h6>
                          {% endif %}
