@@ -61,6 +61,20 @@
   url("#{$la-font-path}/la-solid-900.svg#lineawesome") format("svg");
 }
 
+// Pro User compatibility
+@font-face {
+  font-family: $la-font-name-las-pro;
+  font-style: normal;
+  font-weight: 900;
+  font-display: auto;
+  src: url('#{$la-font-path}/la-solid-900.eot');
+  src: url("#{$la-font-path}/la-solid-900.eot?#iefix") format("embedded-opentype"),
+  url("#{$la-font-path}/la-solid-900.woff2") format("woff2"),
+  url("#{$la-font-path}/la-solid-900.woff") format("woff"),
+  url("#{$la-font-path}/la-solid-900.ttf") format("truetype"),
+  url("#{$la-font-path}/la-solid-900.svg#lineawesome") format("svg");
+}
+
 // FontAwesome 4 compatibility
 .#{$la-css-prefix}, .#{$la-css-prefix-las} {
   font-family: $la-font-name-las;
