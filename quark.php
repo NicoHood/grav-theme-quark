@@ -17,7 +17,12 @@ class Quark extends Theme
 
     public function onThemeInitialized()
     {
-
+        // Disable breadcrumbs plugin builtin css, as we are overwriting it anyways.
+        // Keeping the css would cause our style to not apply correctly and also
+        // causes more traffic because of another css file.
+        if ($this->config->get('themes.quark.disable_breadcumbs_built_in_css', true)) {
+            $this->config->set('plugins.breadcrumbs.built_in_css', false);
+        }
     }
 
     // Add images to twig template paths to allow inclusion of SVG files
