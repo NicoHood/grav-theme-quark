@@ -48,28 +48,28 @@
 <body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
     <div id="page-wrapper">
     {% block header %}
-        <section id="header" class="section">
-            <section class="container {{ grid_size }}">
-                <nav class="navbar">
-                    <section class="navbar-section logo">
+        <div id="header" class="section">
+            <div class="container {{ grid_size }}">
+                <div class="navbar">
+                    <header class="navbar-section logo" role="banner">
                         {% include 'partials/logo.html.twig' %}
-                    </section>
-                    <section class="navbar-section desktop-menu">
+                    </header>
+                    <nav class="navbar-section desktop-menu" role="navigation" aria-label="Main Navigation">>
 
-                        <nav class="dropmenu animated">
+                        <div class="dropmenu animated">
                         {% block header_navigation %}
                             {% include 'partials/navigation.html.twig' %}
                         {% endblock %}
-                        </nav>
+                        </div>
 
                         {% if config.plugins.login.enabled and grav.user.username %}
                             <span class="login-status-wrapper"><i class="fas fa-user"></i> {% include 'partials/login-status.html.twig' %}</span>
                         {% endif %}
 
-                    </section>
-                </nav>
-            </section>
-        </section>
+                    </nav>
+                </div>
+            </div>
+        </div>
         <div class="mobile-menu">
             <div class="button_container" id="toggle">
                 <span class="top"></span>
@@ -81,10 +81,10 @@
 
     {% block hero %}{% endblock %}
 
-        <section id="start">
+        <div id="start">
         {% block body %}
-            <section id="body-wrapper" class="section">
-                <section class="container {{ grid_size }}">
+            <div id="body-wrapper" class="section">
+                <div class="container {{ grid_size }}">
                     {% block messages %}
                         {% include 'partials/messages.html.twig' ignore missing %}
                     {% endblock %}
@@ -96,10 +96,10 @@
                     {% endblock %}
 
                     {{ block('content_surround') }}
-                </section>
-            </section>
+                </div>
+            </div>
         {% endblock %}
-        </section>
+        </div>
 
     </div>
 
