@@ -23,9 +23,18 @@ body.sticky-footer {
 
     ul {
       &.footer-list {
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+
         > li {
-          display: inline-block;
-          margin: 0 0.1rem;
+          display: flex;
+          margin: 0;
+          &:not(:first-child):before {
+            content: "\2022";
+            font-weight: 900;
+            margin: 0 0.4rem;
+          }
         }
       }
     }
