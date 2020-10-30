@@ -9,27 +9,6 @@
     {% include 'partials/hero.html.twig' with {id: 'blog-hero', content: page.content, hero_image: blog_image} %}
 {% endblock %}
 
-{# We must override the body here in order to inject the additional class blog-listing #}
-{% block body %}
-    <section id="body-wrapper" class="section">
-        <section class="container {{ grid_size }}">
-
-        {% block messages %}
-            {% include 'partials/messages.html.twig' ignore missing %}
-        {% endblock %}
-
-        {% block breadcrumbs %}
-            {% if show_breadcrumbs and config.plugins.breadcrumbs.enabled %}
-                {% include 'partials/breadcrumbs.html.twig' %}
-            {% endif %}
-        {% endblock %}
-
-        {{ block('content_surround') }}
-
-        </section>
-    </section>
-{% endblock %}
-
 {% block content %}
     {% embed 'partials/layout.html.twig' with {blog: page} %}
         {% block item %}
