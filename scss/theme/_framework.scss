@@ -19,15 +19,15 @@ html {
   .container {
     padding: $vert-padding;
   }
-
-  // Fixed Header solution
-  .header-fixed & {
-    padding-top: $header-height-large;
-  }
 }
 
+// Fixed Header solution
 .header-fixed {
-  .hero + #start > #body-wrapper {
+  #start {
+    padding-top: $header-height-large;
+  }
+
+  .hero + #start {
     padding-top: 0;
   }
 }
