@@ -8,7 +8,8 @@
 <head>
 {% block head deferred %}
     <meta charset="utf-8" />
-    <title>{% if title_override is defined %}{{ title_override }}{% else %}{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}{% endif %}</title>
+    {% set page_title = page_title|default(page.title ~ (page.title and theme_var('append_site_title', true) ? ' | ' ~ site.title)) %}
+    <title>{{ page_title|default(site.title) }}</title>
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
