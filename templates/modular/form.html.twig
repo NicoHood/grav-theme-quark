@@ -1,0 +1,20 @@
+{% set grid_size = theme_var('grid-size') %}
+
+<section class="section modular-text {{ page.header.class}}">
+    <section class="container {{ grid_size }}">
+        <div class="columns {{ page.header.form_align|default('align-right') }}">
+            {% if form %}
+            <div class="column col-6 col-md-12">
+                {{ content|raw }}
+            </div>
+            <div class="column col-6 col-md-12">
+              {% include "forms/form.html.twig" %}
+            </div>
+            {% else %}
+            <div class="column col-12">
+                {{ content|raw }}
+            </div>
+            {% endif %}
+        </div>
+    </section>
+</section>
