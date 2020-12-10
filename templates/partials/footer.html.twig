@@ -1,8 +1,14 @@
 <footer id="footer" class="section" role="contentinfo">
     <section class="container {{ grid_size }}">
       {# Try to load a custom footer #}
-      {% set footer_content = page.find('/modules/footer').content %}
-      {% if footer_content %}
+      {% set custom_footer = page.header.custom_footer %}
+      {% if custom_footer is not null %}
+          {% set footer_content = custom_footer|markdown(false) %}
+      {% else %}
+          {% set footer_content = page.find('/modules/footer').content %}
+      {% endif %}
+
+      {% if footer_content is not null %}
         {{ footer_content|raw }}
       {% else %}
 
