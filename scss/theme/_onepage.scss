@@ -112,7 +112,7 @@
   }
 }
 
-.modular-text {
+.modular-text, .modular-form {
   padding-top: 4rem;
   padding-bottom: 4rem;
   background-color: $bg-color;
@@ -120,4 +120,7 @@
   .columns.left {
     flex-direction: row-reverse;
   }
+
+  word-break: break-word;
+  word-wrap: break-word;
 }
