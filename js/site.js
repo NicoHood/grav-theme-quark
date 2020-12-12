@@ -10,7 +10,8 @@ function scrollHeader() {
 }
 
 function parallaxBackground() {
-    $('.parallax').css('background-positionY', ($(window).scrollTop() * 0.3) + 'px');
+    $('.header-fixed .parallax.hero-center').css('background-positionY', 'calc(50% + ' + ($(window).scrollTop() * 0.3) + 'px)');
+    $('.parallax:not(.hero-center)').css('background-positionY', ($(window).scrollTop() * 0.3) + 'px');
 }
 
 jQuery(document).ready(function($){

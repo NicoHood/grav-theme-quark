@@ -85,6 +85,10 @@ html {
 
   .header-fixed & {
     background-position: 50% 0;
+
+    &.hero-center {
+      background-position: 50% 50%;
+    }
   }
 
   //&.parallax {
