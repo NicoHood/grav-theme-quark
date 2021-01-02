@@ -1,5 +1,5 @@
-{% set type_mapping = {'info':'success', 'error': 'error', 'warning': 'warning'} %}
-{% set icon_mapping = {'info':'checkmark', 'error':'wrong', 'warning':'information'} %}
+{% set type_mapping = {'info':'success', 'error': 'error', 'warning': 'warning', 'success': 'success'} %}
+{% set icon_mapping = {'info':'check', 'error':'times', 'warning':'exclamation-triangle', 'success': 'check'} %}
 
 {% if grav.messages.all %}
     <div id="messages">
@@ -10,7 +10,7 @@
         {% set icon = icon_mapping[scope] %}
 
         <div class="toast toast-{{ type }} {{ scope }}">
-            <i class="icon dripicons-{{ icon }}"></i> {{ message.message|raw }}
+            <i class="fas fa-{{ icon }}"></i> {{ message.message|raw }}
         </div>
     {% endfor %}
     </div>
