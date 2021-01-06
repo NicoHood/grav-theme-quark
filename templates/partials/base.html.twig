@@ -15,6 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
+    {% if config.plugins.sitemap.enabled %}
+      <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ config.plugins.sitemap.route ends with '.xml' ? config.plugins.sitemap.route : config.plugins.sitemap.route ~ '.xml' }}">
+    {% endif %}
+
     <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 {% endblock head %}
