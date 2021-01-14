@@ -6,12 +6,10 @@ html {
 #start {
   &, & * {
     scroll-margin-top: $header-height-large;
-    scroll-snap-margin-top: $header-height-large; /* Safari and IOS */
   }
 
   .header-animated &, .header-animated & * {
     scroll-margin-top: $header-height-small;
-    scroll-snap-margin-top: $header-height-small; /* Safari and IOS */
   }
 }
 
