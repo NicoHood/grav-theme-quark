@@ -11,3 +11,4 @@ show_breadcrumbs:
 spectre:
   exp: false
   icons: false
+internet_explorer_deprecated: true

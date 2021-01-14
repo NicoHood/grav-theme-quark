@@ -21,7 +21,7 @@ en:
         HEADLINE: Archives
       SYNDICATE:
         HEADLINE: Syndicate
-
+    INTERNET_EXPLORER_NOT_SUPPORTED: 'Internet Explorer is no longer supported by %1$s. Please use a recent version of <a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a>, <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank">Safari</a> or <a href="https://www.microsoft.com/edge" target="_blank">Microsoft Edge</a>.'
 de:
   THEME_QUARK:
     BLOG:
@@ -45,7 +45,7 @@ de:
         HEADLINE: Archiv
       SYNDICATE:
         HEADLINE: Abonnements
-
+    INTERNET_EXPLORER_NOT_SUPPORTED: 'Internet Explorer wird von %1$s nicht mehr unterstützt. Bitte nutze eine aktuelle Version von <a href="https://www.mozilla.org/firefox/" target="_blank">Firefox</a>, <a href="https://www.google.com/chrome/" target="_blank">Chrome</a>, <a href="http://www.apple.com/safari/" target="_blank">Safari</a> oder <a href="https://www.microsoft.com/edge" target="_blank">Microsoft Edge</a>.'
 es:
   THEME_QUARK:
     BLOG:

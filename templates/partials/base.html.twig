@@ -54,8 +54,44 @@
     <link rel="preload" href="{{ url('theme://fonts/la-solid-900.woff2') }}" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="{{ url('theme://fonts/la-regular-400.woff2') }}" as="font" type="font/woff2" crossorigin>
 {% endblock %}
+
+{# Internet explorer warning #}
+{% if grav.browser.browser == 'msie' and theme_var('internet_explorer_deprecated', false) %}
+    <style type="text/css">
+        #ie-deprecated-checkbox {
+            visibility: hidden;
+        }
+        #ie-deprecated-warning {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 4rem;
+            z-index: 10000;
+            margin: 0;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 30px;
+        }
+        #ie-deprecated-checkbox:checked + #ie-deprecated-warning {
+            visibility: hidden;
+        }
+    </style>
+{% endif %}
+
 </head>
 <body id="top" class="{% block body_classes %}{{ body_classes }}{% endblock %}">
+
+    {# Internet explorer warning #}
+    {% if grav.browser.browser == 'msie' and theme_var('internet_explorer_deprecated', false) %}
+        <input type="checkbox" id="ie-deprecated-checkbox">
+        <div class="notices red" id="ie-deprecated-warning">
+            <span>{{ "THEME_QUARK.INTERNET_EXPLORER_NOT_SUPPORTED"|t(site.title)|raw }}</span>
+            <label for="ie-deprecated-checkbox"><i class="fas fa-window-close fa-2x"></i></label>
+        </div>
+    {% endif %}
+
     <div id="page-wrapper">
     {% block header %}
         <div id="header" class="section">
